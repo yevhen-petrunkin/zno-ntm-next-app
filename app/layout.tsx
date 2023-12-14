@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+
+import { noto, inter } from '@/fonts';
+import { cn } from '@/lib/utils';
+
 import '@/styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
-  title: 'Next.js App',
-  description: 'Next.js starter',
+  title: 'ZNO-NMT English',
+  description: 'ZNO-NMT English Next.js App',
 };
 
 export default function RootLayout({
@@ -15,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="uk">
+      <body className={cn(inter.variable, noto.variable)}>{children}</body>
     </html>
   );
 }
